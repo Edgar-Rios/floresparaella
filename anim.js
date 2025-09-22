@@ -1,7 +1,7 @@
 // Sincronizar las letras con la canción
 var audio = document.querySelector("audio");
 var lyrics = document.querySelector("#lyrics");
-
+audio.autoplay = true
 // Array de objetos que contiene cada línea y su tiempo de aparición en segundos
 var lyricsData = [
   { text: 'Tus ojitos son las joyas mas lindas', time: 7 },
