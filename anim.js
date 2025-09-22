@@ -1,7 +1,8 @@
 // Sincronizar las letras con la canción
 var audio = document.querySelector("audio");
 var lyrics = document.querySelector("#lyrics");
-audio.autoplay = true
+var boton = document.querySelector('.boton');
+// audio.autoplay = true
 // Array de objetos que contiene cada línea y su tiempo de aparición en segundos
 var lyricsData = [
   { text: 'Tus ojitos son las joyas mas lindas', time: 7 },
@@ -47,8 +48,16 @@ function updateLyrics() {
     // lyrics.innerHTML = "";
   }
 }
+boton.addEventListener('click',()=>{
+  audio.muted = false
+  audio.play()
+  boton.classList.add('oculto')
+  // console.log('clicks ')
+  setInterval(updateLyrics, 5000);
 
-setInterval(updateLyrics, 5000);
+  document.querySelector('.titulo').classList.remove('oculto')
+  document.querySelector('.flowers').classList.remove('ocultas')
+})
 
 //funcion titulo
 // Función para ocultar el título después de 216 segundos
